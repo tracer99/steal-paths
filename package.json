@@ -1,0 +1,72 @@
+{
+  "name": "steal-paths",
+  "version": "1.0.0",
+  "description": "Testing out an import bug with teal paths",
+  "main": "steal-paths/project.js",
+  "files": [
+    "project"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracer99/steal-paths.git"
+  },
+  "author": "Paul Tichonczuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tracer99/steal-paths/issues"
+  },
+  "homepage": "https://github.com/tracer99/steal-paths#readme",
+  "dependencies": {
+    "can": "^2.3.27",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1",
+    "steal": "^0.16.42"
+  },
+  "devDependencies": {
+    "steal-tools": "^0.16.8"
+  },
+  "system": {
+    "npmAlgorithm": "flat",
+    "npmIgnore": [
+      "devDependencies"
+    ],
+    "main": "steal-paths/project",
+    "directories": {
+      "lib": "project"
+    },
+    "map": {
+      "mootools/mootools": "mootools",
+      "mootools-more/mootools-more": "mootools-more"
+    },
+    "paths": {
+      "mootools": "MooTools-Core-1.6.0.js",
+      "mootools-more": "MooTools-More-1.6.0.js",
+      "can/util/util": "node_modules/can/util/mootools/mootools.js"
+    },
+    "meta": {
+      "mootools": {
+        "format": "global",
+        "scriptEval": true
+      },
+      "mootools-more": {
+        "format": "global",
+        "deps": [
+          "mootools"
+        ],
+        "scriptEval": true
+      }
+    },
+    "ext": {
+      "ejs": "/can/view/ejs/system",
+      "stache": "/can/view/stache/system"
+    },
+    "buildConfig": {
+      "map": {
+        "can/util/util": "can/util/domless/domless"
+      }
+    }
+  }
+}
